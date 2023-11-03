@@ -11,7 +11,7 @@ class Shader:
     def __init__(self, imagePath: str):
         self.image = imread(imagePath)
     
-    def createEmptyResult(self, arrayWidth, arrayHeight):
+    def createEmptyResult(self, arrayWidth: int, arrayHeight: int):
         self.result = [[] for x in range(arrayHeight)]
         for i in range(len(self.result)):
             for j in range(arrayWidth):
@@ -21,6 +21,7 @@ class Shader:
 def main():
     s = Shader('C:/Users/lolle/Desktop/Whiskas.png')
     s.createEmptyResult(100, 100)
+
 
 
 if __name__ == '__main__':
