@@ -21,13 +21,13 @@ class Shader:
             print(''.join(result[i]))
     
     @staticmethod
-    def convert(imagePath: str, customHeight: int = 100) -> None:
+    def convert(imagePath: str, customWidth: int = 100) -> None:
         image = imread(imagePath)
-        Shader.createEmptyResult(customHeight, customHeight)
+        Shader.createEmptyResult(customWidth, customWidth)
     
     @staticmethod
-    def setCustomHeight(height: int) -> None:
-        customHeight = height
+    def setcustomWidth(wihth: int) -> None:
+        customWidth = wihth
 
 
 def main():
