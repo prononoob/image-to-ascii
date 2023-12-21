@@ -26,7 +26,8 @@ class Shader:
         image = imread(imagePath)
         ratio = Calculate.pixelRatio(customWidth, len(image[0]))
         # print(int(ratio * len(image)))
-        Shader.createEmptyResult(customWidth, customWidth)
+        print(customWidth, int(len(image) * ratio))
+        Shader.createEmptyResult(customWidth, int(len(image) * ratio))
     
     @staticmethod
     def setcustomWidth(wihth: int) -> None:
