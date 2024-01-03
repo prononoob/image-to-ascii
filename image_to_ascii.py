@@ -69,7 +69,7 @@ class Shader:
                         segment.append(image[x][y])
                 segment = Shader.pixelMergeStrategy.merge(segment)
                 segment = segment - segment%16
-                result[i][j] = Shader.chars[int(segment / 16) - 1]
+                result[i][j] = Shader.chars[int(segment / 16)]
 
                 # image[i][j] = image[int(tempi)][int(tempj)]
                 tempj += len(image[i]) / len(result[i])
