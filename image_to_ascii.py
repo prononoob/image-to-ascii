@@ -69,6 +69,10 @@ class Shader:
         for i in result:
             print(''.join(i))
         
+        with open('result.txt', 'w') as file:
+            for i in result:
+                file.write(''.join([x*2 for x in i]) + '\n')
+        
         # [DEBUG print szarego obrazka]
         # cv2.imshow('image', image)
         # cv2.waitKey(0)
