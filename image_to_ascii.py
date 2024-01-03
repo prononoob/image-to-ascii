@@ -1,4 +1,5 @@
 import cv2
+from abc import ABC, abstractmethod
 
 
 class Calculate:
@@ -10,6 +11,12 @@ class Calculate:
         return lineWidth / imageWidth
     pass
 
+
+
+class PixelMergeStrategy(ABC):
+    @abstractmethod
+    def merge(self, list[int]) -> int:
+        pass
 
 
 class Shader:
