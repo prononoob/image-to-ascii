@@ -15,12 +15,18 @@ class Calculate:
 
 class PixelMergeStrategy(ABC):
     @abstractmethod
-    def merge(self, list[int]) -> int:
+    def merge(self, pixelList: list[int]) -> int:
         pass
+
+
+class AveragePixelMergeStrategy(PixelMergeStrategy):
+    def merge(self, pixelList: list[int]) -> int:
+        return int(sum(pixelList) / len(pixelList))
 
 
 class Shader:
     chars = ['`', '_', '>', 'c', 's', 'J', '{', 'I', 'S', '6', 'V', 'U', 'H', '$', 'N', '@']
+    pixelMergeStrategy = AveragePixelMergeStrategy()
 
     @staticmethod
     def createEmptyResult(arrayWidth: int, arrayHeight: int) -> None:
@@ -50,10 +56,15 @@ class Shader:
         # print(int(ratio * len(image)))
         print(customWidth, int(len(image) * ratio))
         Shader.createEmptyResult(customWidth, int(len(image) * ratio))
+        
     
     @staticmethod
     def setcustomWidth(width: int) -> None:
         customWidth = width
+
+    @staticmethod
+    def setPixelMergeStrategy(self, pixelMergeStrategy: PixelMergeStrategy) -> None:
+        pixelMergeStrategy = pixelMergeStrategy
 
 
 def main():
