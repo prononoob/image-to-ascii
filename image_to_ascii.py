@@ -1,4 +1,4 @@
-from cv2 import imread
+import cv2
 
 
 class Calculate:
@@ -23,7 +23,14 @@ class Shader:
     
     @staticmethod
     def convert(imagePath: str, customWidth: int = 100) -> None:
-        image = imread(imagePath)
+        image = cv2.imread(imagePath)
+        image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+
+        # DEBUG print
+        # cv2.imshow('image', image)
+        # cv2.waitKey(0)
+        # cv2.destroyAllWindows()
+        
         ratio = Calculate.pixelRatio(customWidth, len(image[0]))
         # print(int(ratio * len(image)))
         print(customWidth, int(len(image) * ratio))
