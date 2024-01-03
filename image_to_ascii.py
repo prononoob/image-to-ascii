@@ -13,6 +13,8 @@ class Calculate:
 
 
 class Shader:
+    chars = ['`', '_', '>', 'c', 's', 'J', '{', 'I', 'S', '6', 'V', 'U', 'H', '$', 'N', '@']
+
     @staticmethod
     def createEmptyResult(arrayWidth: int, arrayHeight: int) -> None:
         result = [[] for x in range(arrayHeight)]
@@ -34,10 +36,8 @@ class Shader:
         # cv2.destroyAllWindows()
         
         # chars in order of brightness
-        # chars: `_>csJiIS6VUm$N@
+        # chars: `_>csJ{IS6VUH$N@
         # 0 is black, 255 is white
-        chars = ['`', '_', '>', 'c', 's', 'J', 'i', 'I', 'S', '6', 'V', 'U', 'm', '$', 'N', '@']
-        
 
         ratio = Calculate.pixelRatio(customWidth, len(image[0]))
         # print(int(ratio * len(image)))
